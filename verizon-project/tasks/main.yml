@@ -2,12 +2,12 @@
 # tasks file for verizon-project
 - name: Include Mount.yml tasks
   import_tasks: mount.yml
-  when: ansible_nodename == "{{ n3 }}"
+  when: ansible_nodename == '{{ n3 }}'
 
 - name: Include nfsserver.yml tasks
   import_tasks: nfsserver.yml
-  when: ansible_nodename == "{{ n3 }}"
+  when: ansible_nodename == '{{ n3 }}'
 
 - name: Include client.yml tasks
   import_tasks: client.yml
-  when: 'ansible_nodename == "{{ n1 }}" or ansible_nodename == "{{ n2 }}"'
+  when: "ansible_nodename == '{{ n1 }}' or ansible_nodename == '{{ n2 }}'"
