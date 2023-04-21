@@ -1,0 +1,18 @@
+- name: Install
+  yum:
+    name: nfs-utils
+    state: latest
+
+- name: Create mount
+  file:
+    path: "{{ c1 }}"
+    state: directory
+    # tags: client1
+
+- name: mount to NFS
+  mount:
+    src: '{{ n3 }}:{{ nfss }}'
+    path: "{{ c1 }}"
+    state: mounted
+    fstype: nfs
+    #  tags: client1
