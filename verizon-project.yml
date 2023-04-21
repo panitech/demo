@@ -1,0 +1,6 @@
+- hosts: all
+  become: True
+  tasks:
+     - name: RUN ROLE
+       include_role:
+          name: verizon-project
